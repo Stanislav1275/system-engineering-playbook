@@ -207,9 +207,16 @@
 <li>Сделайте fork репозитория <a href="https://github.com/Jho00/system-engineering-playbook">mdb</a></li>
 <li>Перейдите в настройки своего github репозитория. Выберите вкладку Actions -&gt; General. Установите "Read and write permissions" в категории Workflow permissions</li>
 </ol>
-<div style="break-before: page; page-break-before: always;"></div><h1 id="Архитектура-и-потоки"><a class="header" href="#Архитектура-и-потоки">Архитектура и потоки</a></h1>
-<p>@drawio{https://github.com/Stanislav1275/mdb/blob/master/src/diagrams/equeue_architecture_spec.md}</p>
-<div style="break-before: page; page-break-before: always;"></div><iframe src="swagger/swagger.html" width="100%" height="1500px" style="border:0;" allowfullscreen="allowfullscreen"></iframe>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="drawio-example"><a class="header" href="#drawio-example">Drawio Example</a></h1>
+<h3 id="Создание-диаграммы"><a class="header" href="#Создание-диаграммы">Создание диаграммы</a></h3>
+<ol>
+<li>Создайте диаграмму используя <a href="https://app.diagrams.net/">draw.io</a></li>
+<li>Сохраните файл в формате <code>.drawio</code> в проект</li>
+<li>Добавьте файл в индексацию git и отправьте в github репозиторий</li>
+</ol>
+<h3 id="Добавление-диаграммы-в-документацию"><a class="header" href="#Добавление-диаграммы-в-документацию">Добавление диаграммы в документацию</a></h3>
+<p>Для вставки диаграммы используйте синтаксис из примера ниже, заметете, что необходимо указать ссылку на файл в репозитории.</p>
+<iframe class="drawio-viewer" src="https://viewer.diagrams.net/?highlight=0000ff&edit=_blank&layers=1&nav=1&title=diagram&url=https://raw.githubusercontent.com/bndroll/mdb/master/src/diagrams/equeue_architecture_spec.drawio"></iframe><div style="break-before: page; page-break-before: always;"></div><iframe src="swagger/swagger.html" width="100%" height="1500px" style="border:0;" allowfullscreen="allowfullscreen"></iframe>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="Архитектура-сервиса-электронных-очередей-и-предварительной-записи"><a class="header" href="#Архитектура-сервиса-электронных-очередей-и-предварительной-записи">Архитектура сервиса электронных очередей и предварительной записи</a></h1>
 <h2 id="1-Назначение-системы"><a class="header" href="#1-Назначение-системы">1. Назначение системы</a></h2>
 <p>Сервис предназначен для предварительной записи заявителей на услуги, управления слотами приёма, поддержки электронной очереди в холле, уведомлений о записи и формирования витрины занятости для сотрудников и руководителя подразделения.</p>
