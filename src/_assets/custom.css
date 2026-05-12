@@ -1,7 +1,19 @@
 .drawio-viewer {
   width: 100%;
-  height: 500px;
+  aspect-ratio: 16 / 9;
+  height: auto;
   border: 1px solid #ddd;
   border-radius: 4px;
-  margin: 10px 0;
+  margin: 16px 0;
+  display: block;
+}
+
+:has(.drawio-viewer) .content {
+  max-width: 100%;
+}
+
+:has(.drawio-viewer) .content main {
+  max-width: 100%;
+  padding-left: 8px;
+  padding-right: 8px;
 }
