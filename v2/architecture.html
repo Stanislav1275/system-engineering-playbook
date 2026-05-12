@@ -1,0 +1,319 @@
+<!DOCTYPE HTML>
+<html lang="en" class="light sidebar-visible" dir="ltr">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>Архитектура - system-engineering-playbook</title>
+
+
+        <!-- Custom HTML head -->
+
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff">
+
+        <link rel="icon" href="../favicon.svg">
+        <link rel="shortcut icon" href="../favicon.png">
+        <link rel="stylesheet" href="../css/variables.css">
+        <link rel="stylesheet" href="../css/general.css">
+        <link rel="stylesheet" href="../css/chrome.css">
+        <link rel="stylesheet" href="../css/print.css" media="print">
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="../FontAwesome/css/font-awesome.css">
+        <link rel="stylesheet" href="../fonts/fonts.css">
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" id="highlight-css" href="../highlight.css">
+        <link rel="stylesheet" id="tomorrow-night-css" href="../tomorrow-night.css">
+        <link rel="stylesheet" id="ayu-highlight-css" href="../ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+        <link rel="stylesheet" href="../src/_assets/custom.css">
+
+
+        <!-- Provide site root and default themes to javascript -->
+        <script>
+            const path_to_root = "../";
+            const default_light_theme = "light";
+            const default_dark_theme = "navy";
+            window.path_to_searchindex_js = "../searchindex.js";
+        </script>
+        <!-- Start loading toc.js asap -->
+        <script src="../toc.js"></script>
+    </head>
+    <body>
+    <div id="mdbook-help-container">
+        <div id="mdbook-help-popup">
+            <h2 class="mdbook-help-title">Keyboard shortcuts</h2>
+            <div>
+                <p>Press <kbd>←</kbd> or <kbd>→</kbd> to navigate between chapters</p>
+                <p>Press <kbd>S</kbd> or <kbd>/</kbd> to search in the book</p>
+                <p>Press <kbd>?</kbd> to show this help</p>
+                <p>Press <kbd>Esc</kbd> to hide this help</p>
+            </div>
+        </div>
+    </div>
+    <div id="body-container">
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script>
+            try {
+                let theme = localStorage.getItem('mdbook-theme');
+                let sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script>
+            const default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? default_dark_theme : default_light_theme;
+            let theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            const html = document.documentElement;
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add("js");
+        </script>
+
+        <input type="checkbox" id="sidebar-toggle-anchor" class="hidden">
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script>
+            let sidebar = null;
+            const sidebar_toggle = document.getElementById("sidebar-toggle-anchor");
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            } else {
+                sidebar = 'hidden';
+                sidebar_toggle.checked = false;
+            }
+            if (sidebar === 'visible') {
+                sidebar_toggle.checked = true;
+            } else {
+                html.classList.remove('sidebar-visible');
+            }
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <!-- populated by js -->
+            <mdbook-sidebar-scrollbox class="sidebar-scrollbox"></mdbook-sidebar-scrollbox>
+            <noscript>
+                <iframe class="sidebar-iframe-outer" src="../toc.html"></iframe>
+            </noscript>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle">
+                <div class="sidebar-resize-indicator"></div>
+            </div>
+        </nav>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky">
+                    <div class="left-buttons">
+                        <label id="sidebar-toggle" class="icon-button" for="sidebar-toggle-anchor" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </label>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="default_theme">Auto</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                        <button id="search-toggle" class="icon-button" type="button" title="Search (`/`)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="/ s" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                    </div>
+
+                    <h1 class="menu-title">system-engineering-playbook</h1>
+
+                    <div class="right-buttons">
+                        <a href="../print.html" title="Print this book" aria-label="Print this book">
+                            <i id="print-button" class="fa fa-print"></i>
+                        </a>
+
+                    </div>
+                </div>
+
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <div class="search-wrapper">
+                            <input type="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                            <div class="spinner-wrapper">
+                                <i class="fa fa-spinner fa-spin"></i>
+                            </div>
+                        </div>
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script>
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <h1 id="Архитектура-системы"><a class="header" href="#Архитектура-системы">Архитектура системы</a></h1>
+<h2 id="41-Общий-архитектурный-подход"><a class="header" href="#41-Общий-архитектурный-подход">4.1. Общий архитектурный подход</a></h2>
+<p>Система строится как модульная клиент-серверная информационная система с выделенными функциональными компонентами: управление записью, управление расписанием, электронная очередь, уведомления, отчётность и аудит. Критичные операции, связанные с созданием записи на слот, выполняются транзакционно, так как основным архитектурным риском является конкурентная запись нескольких пользователей на одно и то же время.</p>
+<p>Для уменьшения связности внешние уведомления выполняются асинхронно через очередь сообщений. Недоступность SMS/e-mail/push-шлюза не должна блокировать создание записи. Для сотрудников используется интеграция с SSO, а для заявителей допускается идентификация через контактные данные, ссылку на запись или личный кабинет.</p>
+<h2 id="42-c4-context"><a class="header" href="#42-c4-context">4.2. C4 Context</a></h2>
+<p>Контекстная диаграмма показывает систему как единый объект и внешние взаимодействия:</p>
+<ul>
+<li>заявитель взаимодействует с публичным интерфейсом записи;</li>
+<li>сотрудники взаимодействуют с интерфейсом сотрудника и администратора;</li>
+<li>терминалы и табло взаимодействуют с API очереди;</li>
+<li>SSO используется для аутентификации сотрудников;</li>
+<li>сервис уведомлений отправляет сообщения заявителям;</li>
+<li>внешний календарь предоставляет или принимает данные расписания;</li>
+<li>система мониторинга получает метрики и логи.</li>
+</ul>
+<iframe class="drawio-viewer" src="https://viewer.diagrams.net/?highlight=0000ff&edit=_blank&layers=1&nav=1&title=diagram&url=https://raw.githubusercontent.com/Stanislav1275/system-engineering-playbook/main/src/diagrams/equeue.drawio"></iframe>
+<h2 id="43-c4-container"><a class="header" href="#43-c4-container">4.3. C4 Container</a></h2>
+<p>На уровне контейнеров система включает:</p>
+<div class="table-wrapper"><table><thead><tr><th>Контейнер</th><th>Назначение</th><th>Основные связи</th></tr></thead><tbody>
+<tr><td>Public Web UI</td><td>Интерфейс заявителя</td><td>API Gateway</td></tr>
+<tr><td>Staff/Admin UI</td><td>Интерфейс сотрудников, администратора и руководителя</td><td>API Gateway, SSO</td></tr>
+<tr><td>Terminal API</td><td>API для терминалов и табло</td><td>Queue Service</td></tr>
+<tr><td>API Gateway / Backend API</td><td>Единая точка входа, маршрутизация, RBAC, валидация</td><td>Все внутренние сервисы</td></tr>
+<tr><td>Appointment Service</td><td>Создание, отмена, перенос записей</td><td>PostgreSQL, Redis, Message Broker</td></tr>
+<tr><td>Schedule Service</td><td>Расписание, услуги, окна, расчёт слотов</td><td>PostgreSQL, внешний календарь</td></tr>
+<tr><td>Queue Service</td><td>Талоны, статусы очереди, вызов заявителей</td><td>PostgreSQL, табло</td></tr>
+<tr><td>Notification Worker</td><td>Асинхронная отправка уведомлений</td><td>Message Broker, Notification Gateway</td></tr>
+<tr><td>Reporting &amp; Audit Service</td><td>Отчёты, аудит, метрики</td><td>PostgreSQL, BI</td></tr>
+<tr><td>Auth Adapter</td><td>Проверка токенов и ролей сотрудников</td><td>SSO</td></tr>
+<tr><td>PostgreSQL</td><td>Основное транзакционное хранилище</td><td>Внутренние сервисы</td></tr>
+<tr><td>Redis</td><td>Кэш, краткоживущие блокировки, idempotency-key</td><td>Appointment Service, API Gateway</td></tr>
+<tr><td>Message Broker</td><td>События записи и уведомлений</td><td>Appointment Service, Notification Worker</td></tr>
+</tbody></table>
+</div>
+<h2 id="44-Ключевые-сущности"><a class="header" href="#44-Ключевые-сущности">4.4. Ключевые сущности</a></h2>
+<div class="table-wrapper"><table><thead><tr><th>Сущность</th><th>Описание</th><th>Основные поля</th></tr></thead><tbody>
+<tr><td>Applicant</td><td>Заявитель</td><td>applicant_id, full_name, phone, email, created_at</td></tr>
+<tr><td>Department</td><td>Подразделение МФЦ</td><td>department_id, name, address, timezone, status</td></tr>
+<tr><td>Service</td><td>Услуга</td><td>service_id, name, duration_minutes, description, is_active</td></tr>
+<tr><td>ServiceWindow</td><td>Окно обслуживания</td><td>window_id, department_id, name, supported_service_ids, status</td></tr>
+<tr><td>Schedule</td><td>Базовое расписание окна</td><td>schedule_id, window_id, day_of_week, start_time, end_time, break_intervals</td></tr>
+<tr><td>ScheduleException</td><td>Исключение расписания</td><td>exception_id, window_id, date, start_time, end_time, type, reason</td></tr>
+<tr><td>Slot</td><td>Расчётный временной интервал</td><td>slot_id, department_id, service_id, window_id, start_at, end_at, status</td></tr>
+<tr><td>Appointment</td><td>Запись на приём</td><td>appointment_id, applicant_id, service_id, department_id, window_id, start_at, end_at, status</td></tr>
+<tr><td>QueueTicket</td><td>Талон электронной очереди</td><td>ticket_id, appointment_id, department_id, number, status, issued_at</td></tr>
+<tr><td>NotificationTask</td><td>Задача уведомления</td><td>notification_id, appointment_id, channel, status, retry_count, next_retry_at</td></tr>
+<tr><td>AuditLog</td><td>Журнал аудита</td><td>audit_id, actor_id, actor_role, action, object_type, object_id, created_at</td></tr>
+</tbody></table>
+</div>
+<h2 id="45-Механизм-защиты-от-двойной-записи"><a class="header" href="#45-Механизм-защиты-от-двойной-записи">4.5. Механизм защиты от двойной записи</a></h2>
+<p>Консистентность слотов обеспечивается несколькими уровнями защиты:</p>
+<ol>
+<li><code>Idempotency-Key</code> на операции создания записи, чтобы повторный запрос клиента не создавал дубликат.</li>
+<li>Краткоживущая блокировка слота в Redis на время выполнения операции.</li>
+<li>Транзакционное создание записи в PostgreSQL.</li>
+<li>Уникальное ограничение на активную запись в пределах окна обслуживания и времени начала.</li>
+<li>Повторная проверка доступности слота непосредственно перед фиксацией записи.</li>
+</ol>
+<pre><code class="language-sql">CREATE UNIQUE INDEX ux_active_appointment_slot
+ON appointments (department_id, service_id, window_id, start_at)
+WHERE status IN ('pending_confirmation', 'confirmed', 'waiting', 'called', 'in_service');
+</code></pre>
+<h2 id="46-adr"><a class="header" href="#46-adr">4.6. ADR</a></h2>
+<h3 id="adr-1-Транзакционное-создание-записи-с-уникальным-ограничением-на-активный-слот"><a class="header" href="#adr-1-Транзакционное-создание-записи-с-уникальным-ограничением-на-активный-слот">ADR-1. Транзакционное создание записи с уникальным ограничением на активный слот</a></h3>
+<p><strong>Контекст:</strong> несколько заявителей могут одновременно выбрать один и тот же свободный слот.</p>
+<p><strong>Решение:</strong> создание записи выполняется в транзакции, а база данных содержит уникальное ограничение на активный слот.</p>
+<p><strong>Альтернативы:</strong> только Redis-lock; только проверка на уровне приложения; предварительная генерация всех слотов.</p>
+<p><strong>Trade-off:</strong> уникальное ограничение усложняет модель статусов, но даёт надёжную защиту от двойной записи даже при сбое прикладной логики.</p>
+<h3 id="adr-2-Асинхронная-отправка-уведомлений-через-очередь-сообщений"><a class="header" href="#adr-2-Асинхронная-отправка-уведомлений-через-очередь-сообщений">ADR-2. Асинхронная отправка уведомлений через очередь сообщений</a></h3>
+<p><strong>Контекст:</strong> уведомительный шлюз может быть временно недоступен.</p>
+<p><strong>Решение:</strong> после изменения записи система публикует событие, а Notification Worker отправляет уведомления асинхронно.</p>
+<p><strong>Альтернативы:</strong> синхронная отправка в рамках запроса; периодический batch без событий.</p>
+<p><strong>Trade-off:</strong> пользователь может получить уведомление с задержкой, но основная операция записи не блокируется внешним сервисом.</p>
+<h3 id="adr-3-Разделение-schedule-service-и-appointment-service"><a class="header" href="#adr-3-Разделение-schedule-service-и-appointment-service">ADR-3. Разделение Schedule Service и Appointment Service</a></h3>
+<p><strong>Контекст:</strong> расписание определяет потенциальную доступность, а запись фиксирует фактическую занятость.</p>
+<p><strong>Решение:</strong> выделить отдельные компоненты для расчёта слотов и управления записями.</p>
+<p><strong>Альтернативы:</strong> единый сервис расписаний и записей.</p>
+<p><strong>Trade-off:</strong> появляется межсервисное взаимодействие, но упрощается ответственность компонентов и тестирование.</p>
+<h3 id="adr-4-Использование-sso-для-сотрудников"><a class="header" href="#adr-4-Использование-sso-для-сотрудников">ADR-4. Использование SSO для сотрудников</a></h3>
+<p><strong>Контекст:</strong> сотрудники организации уже имеют корпоративные учётные записи и роли.</p>
+<p><strong>Решение:</strong> использовать корпоративный SSO для входа сотрудников и проверки ролей.</p>
+<p><strong>Альтернативы:</strong> локальные логины и пароли внутри системы.</p>
+<p><strong>Trade-off:</strong> система зависит от доступности SSO, но снижает риск разрозненного управления учётными записями.</p>
+<h3 id="adr-5-Ведение-журнала-аудита-действий-сотрудников"><a class="header" href="#adr-5-Ведение-журнала-аудита-действий-сотрудников">ADR-5. Ведение журнала аудита действий сотрудников</a></h3>
+<p><strong>Контекст:</strong> сотрудники работают с персональными данными и изменяют статусы обслуживания.</p>
+<p><strong>Решение:</strong> фиксировать действия сотрудников в AuditLog.</p>
+<p><strong>Альтернативы:</strong> хранить только технические логи приложения.</p>
+<p><strong>Trade-off:</strong> увеличивается объём хранимых данных, но повышается контролируемость и расследуемость спорных действий.</p>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                            <a rel="prev" href="../v2/requirements.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+
+                            <a rel="next prefetch" href="../v2/interfaces.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                    <a rel="prev" href="../v2/requirements.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+
+                    <a rel="next prefetch" href="../v2/interfaces.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+            </nav>
+
+        </div>
+
+
+
+
+        <script>
+            window.playground_copyable = true;
+        </script>
+
+
+        <script src="../elasticlunr.min.js"></script>
+        <script src="../mark.min.js"></script>
+        <script src="../searcher.js"></script>
+
+        <script src="../clipboard.min.js"></script>
+        <script src="../highlight.js"></script>
+        <script src="../book.js"></script>
+
+        <!-- Custom JS scripts -->
+
+
+
+    </div>
+    </body>
+</html>

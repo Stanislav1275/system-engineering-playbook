@@ -1,227 +1,302 @@
-<?xml version="1.0" encoding="utf-8"?>
-<mxfile host="app.diagrams.net" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36" version="26.0.14">
+<mxfile host="app.diagrams.net" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36" pages="2">
   <diagram name="C1 Контекст" id="c1-context">
-    <mxGraphModel dx="1600" dy="1000" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1800" pageHeight="1100" math="0" shadow="0">
+    <mxGraphModel dx="1786" dy="995" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1800" pageHeight="1100" math="0" shadow="0">
       <root>
-        <mxCell id="0"/>
-        <mxCell id="1" parent="0"/>
-        <mxCell id="title_83be1a34b6" value="C1 — Контекстная диаграмма&lt;br&gt;Сервис электронных очередей и записи" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=24;fontStyle=1;" vertex="1" parent="1">
-          <mxGeometry x="360" y="20" width="1080" height="50" as="geometry"/>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="title_83be1a34b6" parent="1" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=24;fontStyle=1;" value="C1 — Контекстная диаграмма&lt;br&gt;Сервис электронных очередей и записи" vertex="1">
+          <mxGeometry height="50" width="1080" x="360" y="20" as="geometry" />
         </mxCell>
-        <mxCell id="c1_system" value="&lt;b&gt;Сервис электронных очередей&lt;br&gt;и предварительной записи&lt;/b&gt;&lt;br&gt;&lt;br&gt;Управление услугами, слотами,&lt;br&gt;очередью, уведомлениями и статусами приёма" style="rounded=1;whiteSpace=wrap;html=1;arcSize=12;fillColor=#d5e8d4;strokeColor=#82b366;fontSize=14;fontStyle=1;" vertex="1" parent="1">
-          <mxGeometry x="650" y="390" width="440" height="180" as="geometry"/>
+        <mxCell id="c1_system" parent="1" style="rounded=1;whiteSpace=wrap;html=1;arcSize=12;fillColor=#d5e8d4;strokeColor=#82b366;fontSize=14;fontStyle=1;" value="&lt;b&gt;Сервис электронных очередей&lt;br&gt;и предварительной записи&lt;/b&gt;&lt;br&gt;&lt;br&gt;Управление услугами, слотами,&lt;br&gt;очередью, уведомлениями и статусами приёма" vertex="1">
+          <mxGeometry height="180" width="440" x="650" y="390" as="geometry" />
         </mxCell>
-        <mxCell id="c1_applicant" value="Заявитель&lt;br&gt;&lt;span style='font-size:10px'&gt;запись, отмена, перенос&lt;/span&gt;" style="rounded=1;whiteSpace=wrap;html=1;arcSize=12;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=12;" vertex="1" parent="1">
-          <mxGeometry x="90" y="160" width="190" height="80" as="geometry"/>
+        <mxCell id="c1_applicant" parent="1" style="rounded=1;whiteSpace=wrap;html=1;arcSize=12;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=12;" value="Заявитель&lt;br&gt;&lt;span style=&#39;font-size:10px&#39;&gt;запись, отмена, перенос&lt;/span&gt;" vertex="1">
+          <mxGeometry height="80" width="190" x="90" y="160" as="geometry" />
         </mxCell>
-        <mxCell id="c1_registrar" value="Регистратор&lt;br&gt;&lt;span style='font-size:10px'&gt;вызов и обслуживание&lt;/span&gt;" style="rounded=1;whiteSpace=wrap;html=1;arcSize=12;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=12;" vertex="1" parent="1">
-          <mxGeometry x="90" y="340" width="190" height="80" as="geometry"/>
+        <mxCell id="c1_manager" parent="1" style="rounded=1;whiteSpace=wrap;html=1;arcSize=12;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=12;" value="Руководитель подразделения&lt;br&gt;&lt;span style=&#39;font-size:10px&#39;&gt;отчёты и загрузка&lt;/span&gt;" vertex="1">
+          <mxGeometry height="80" width="190" x="90" y="700" as="geometry" />
         </mxCell>
-        <mxCell id="c1_schedule_admin" value="Администратор расписаний&lt;br&gt;&lt;span style='font-size:10px'&gt;услуги, окна, слоты&lt;/span&gt;" style="rounded=1;whiteSpace=wrap;html=1;arcSize=12;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=12;" vertex="1" parent="1">
-          <mxGeometry x="90" y="520" width="190" height="80" as="geometry"/>
+        <mxCell id="c1_terminal" parent="1" style="rounded=1;whiteSpace=wrap;html=1;arcSize=12;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=12;" value="Терминал / табло в холле&lt;br&gt;&lt;span style=&#39;font-size:10px&#39;&gt;талон, текущая очередь&lt;/span&gt;" vertex="1">
+          <mxGeometry height="80" width="300" x="720" y="780" as="geometry" />
         </mxCell>
-        <mxCell id="c1_manager" value="Руководитель подразделения&lt;br&gt;&lt;span style='font-size:10px'&gt;отчёты и загрузка&lt;/span&gt;" style="rounded=1;whiteSpace=wrap;html=1;arcSize=12;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=12;" vertex="1" parent="1">
-          <mxGeometry x="90" y="700" width="190" height="80" as="geometry"/>
+        <mxCell id="c1_sso" parent="1" style="rounded=1;whiteSpace=wrap;html=1;arcSize=12;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=12;" value="Корпоративный SSO&lt;br&gt;&lt;span style=&#39;font-size:10px&#39;&gt;аутентификация сотрудников&lt;/span&gt;" vertex="1">
+          <mxGeometry height="80" width="250" x="1410" y="180" as="geometry" />
         </mxCell>
-        <mxCell id="c1_terminal" value="Терминал / табло в холле&lt;br&gt;&lt;span style='font-size:10px'&gt;талон, текущая очередь&lt;/span&gt;" style="rounded=1;whiteSpace=wrap;html=1;arcSize=12;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=12;" vertex="1" parent="1">
-          <mxGeometry x="720" y="780" width="300" height="80" as="geometry"/>
+        <mxCell id="c1_case" parent="1" style="rounded=1;whiteSpace=wrap;html=1;arcSize=12;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=12;" value="Система учёта обращений&lt;br&gt;&lt;span style=&#39;font-size:10px&#39;&gt;опциональная передача заявки&lt;/span&gt;" vertex="1">
+          <mxGeometry height="80" width="250" x="1410" y="660" as="geometry" />
         </mxCell>
-        <mxCell id="c1_sso" value="Корпоративный SSO&lt;br&gt;&lt;span style='font-size:10px'&gt;аутентификация сотрудников&lt;/span&gt;" style="rounded=1;whiteSpace=wrap;html=1;arcSize=12;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=12;" vertex="1" parent="1">
-          <mxGeometry x="1410" y="180" width="250" height="80" as="geometry"/>
+        <mxCell id="c1_edge_1" edge="1" parent="1" source="c1_applicant" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=block;endFill=1;fontSize=10;labelBackgroundColor=#ffffff;" target="c1_system" value="выбор услуги, слот,&lt;br&gt;запись / отмена">
+          <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="c1_notif" value="Шлюз уведомлений&lt;br&gt;&lt;span style='font-size:10px'&gt;SMS / e-mail / push&lt;/span&gt;" style="rounded=1;whiteSpace=wrap;html=1;arcSize=12;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=12;" vertex="1" parent="1">
-          <mxGeometry x="1410" y="340" width="250" height="80" as="geometry"/>
+        <mxCell id="c1_edge_2" edge="1" parent="1" source="c1_system" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=block;endFill=1;fontSize=10;labelBackgroundColor=#ffffff;" target="c1_applicant" value="статус записи,&lt;br&gt;напоминания">
+          <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="c1_calendar" value="Внешний календарь / расписания&lt;br&gt;&lt;span style='font-size:10px'&gt;синхронизация исключений&lt;/span&gt;" style="rounded=1;whiteSpace=wrap;html=1;arcSize=12;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=12;" vertex="1" parent="1">
-          <mxGeometry x="1410" y="500" width="250" height="80" as="geometry"/>
+        <mxCell id="c1_edge_3" edge="1" parent="1" source="c1_registrar" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=block;endFill=1;fontSize=10;labelBackgroundColor=#ffffff;" target="c1_system" value="вызов заявителя,&lt;br&gt;статус приёма">
+          <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="c1_case" value="Система учёта обращений&lt;br&gt;&lt;span style='font-size:10px'&gt;опциональная передача заявки&lt;/span&gt;" style="rounded=1;whiteSpace=wrap;html=1;arcSize=12;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=12;" vertex="1" parent="1">
-          <mxGeometry x="1410" y="660" width="250" height="80" as="geometry"/>
+        <mxCell id="c1_edge_4" edge="1" parent="1" source="c1_schedule_admin" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=block;endFill=1;fontSize=10;labelBackgroundColor=#ffffff;" target="c1_system" value="настройка услуг,&lt;br&gt;окон и графиков">
+          <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="c1_edge_1" value="выбор услуги, слот,&lt;br&gt;запись / отмена" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=block;endFill=1;fontSize=10;labelBackgroundColor=#ffffff;" edge="1" parent="1" source="c1_applicant" target="c1_system">
-          <mxGeometry relative="1" as="geometry"/>
+        <mxCell id="c1_edge_5" edge="1" parent="1" source="c1_manager" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=block;endFill=1;fontSize=10;labelBackgroundColor=#ffffff;" target="c1_system" value="запрос отчётов">
+          <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="c1_edge_2" value="статус записи,&lt;br&gt;напоминания" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=block;endFill=1;fontSize=10;labelBackgroundColor=#ffffff;" edge="1" parent="1" source="c1_system" target="c1_applicant">
-          <mxGeometry relative="1" as="geometry"/>
+        <mxCell id="c1_edge_6" edge="1" parent="1" source="c1_system" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=block;endFill=1;fontSize=10;labelBackgroundColor=#ffffff;" target="c1_manager" value="загрузка, no-show,&lt;br&gt;SLA по очередям">
+          <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="c1_edge_3" value="вызов заявителя,&lt;br&gt;статус приёма" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=block;endFill=1;fontSize=10;labelBackgroundColor=#ffffff;" edge="1" parent="1" source="c1_registrar" target="c1_system">
-          <mxGeometry relative="1" as="geometry"/>
+        <mxCell id="c1_edge_7" edge="1" parent="1" source="c1_terminal" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=block;endFill=1;fontSize=10;labelBackgroundColor=#ffffff;" target="c1_system" value="выдача талона,&lt;br&gt;запрос очереди">
+          <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="c1_edge_4" value="настройка услуг,&lt;br&gt;окон и графиков" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=block;endFill=1;fontSize=10;labelBackgroundColor=#ffffff;" edge="1" parent="1" source="c1_schedule_admin" target="c1_system">
-          <mxGeometry relative="1" as="geometry"/>
+        <mxCell id="c1_edge_8" edge="1" parent="1" source="c1_system" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=block;endFill=1;fontSize=10;labelBackgroundColor=#ffffff;" target="c1_terminal" value="номер талона,&lt;br&gt;состояние очереди">
+          <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="c1_edge_5" value="запрос отчётов" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=block;endFill=1;fontSize=10;labelBackgroundColor=#ffffff;" edge="1" parent="1" source="c1_manager" target="c1_system">
-          <mxGeometry relative="1" as="geometry"/>
+        <mxCell id="c1_edge_9" edge="1" parent="1" source="c1_system" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=block;endFill=1;fontSize=10;labelBackgroundColor=#ffffff;" target="c1_sso" value="проверка токена,&lt;br&gt;роли сотрудника">
+          <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="c1_edge_6" value="загрузка, no-show,&lt;br&gt;SLA по очередям" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=block;endFill=1;fontSize=10;labelBackgroundColor=#ffffff;" edge="1" parent="1" source="c1_system" target="c1_manager">
-          <mxGeometry relative="1" as="geometry"/>
+        <mxCell id="c1_edge_10" edge="1" parent="1" source="c1_system" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=block;endFill=1;fontSize=10;labelBackgroundColor=#ffffff;" target="c1_notif" value="задания на отправку">
+          <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="c1_edge_7" value="выдача талона,&lt;br&gt;запрос очереди" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=block;endFill=1;fontSize=10;labelBackgroundColor=#ffffff;" edge="1" parent="1" source="c1_terminal" target="c1_system">
-          <mxGeometry relative="1" as="geometry"/>
+        <mxCell id="c1_edge_11" edge="1" parent="1" source="c1_system" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=block;endFill=1;fontSize=10;labelBackgroundColor=#ffffff;" target="c1_calendar" value="запрос / синхронизация&lt;br&gt;расписаний">
+          <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="c1_edge_8" value="номер талона,&lt;br&gt;состояние очереди" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=block;endFill=1;fontSize=10;labelBackgroundColor=#ffffff;" edge="1" parent="1" source="c1_system" target="c1_terminal">
-          <mxGeometry relative="1" as="geometry"/>
+        <mxCell id="c1_edge_12" edge="1" parent="1" source="c1_system" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=block;endFill=1;fontSize=10;labelBackgroundColor=#ffffff;" target="c1_case" value="создание записи обращения&lt;br&gt;после приёма">
+          <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="c1_edge_9" value="проверка токена,&lt;br&gt;роли сотрудника" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=block;endFill=1;fontSize=10;labelBackgroundColor=#ffffff;" edge="1" parent="1" source="c1_system" target="c1_sso">
-          <mxGeometry relative="1" as="geometry"/>
+        <mxCell id="c1_registrar" parent="1" style="rounded=1;whiteSpace=wrap;html=1;arcSize=12;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=12;" value="Регистратор&lt;br&gt;&lt;span style=&#39;font-size:10px&#39;&gt;вызов и обслуживание&lt;/span&gt;" vertex="1">
+          <mxGeometry height="80" width="190" x="90" y="340" as="geometry" />
         </mxCell>
-        <mxCell id="c1_edge_10" value="задания на отправку" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=block;endFill=1;fontSize=10;labelBackgroundColor=#ffffff;" edge="1" parent="1" source="c1_system" target="c1_notif">
-          <mxGeometry relative="1" as="geometry"/>
+        <mxCell id="c1_schedule_admin" parent="1" style="rounded=1;whiteSpace=wrap;html=1;arcSize=12;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=12;" value="Администратор расписаний&lt;br&gt;&lt;span style=&#39;font-size:10px&#39;&gt;услуги, окна, слоты&lt;/span&gt;" vertex="1">
+          <mxGeometry height="80" width="190" x="90" y="520" as="geometry" />
         </mxCell>
-        <mxCell id="c1_edge_11" value="запрос / синхронизация&lt;br&gt;расписаний" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=block;endFill=1;fontSize=10;labelBackgroundColor=#ffffff;" edge="1" parent="1" source="c1_system" target="c1_calendar">
-          <mxGeometry relative="1" as="geometry"/>
+        <mxCell id="c1_notif" parent="1" style="rounded=1;whiteSpace=wrap;html=1;arcSize=12;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=12;" value="Шлюз уведомлений&lt;br&gt;&lt;span style=&#39;font-size:10px&#39;&gt;SMS / e-mail / push&lt;/span&gt;" vertex="1">
+          <mxGeometry height="80" width="250" x="1410" y="340" as="geometry" />
         </mxCell>
-        <mxCell id="c1_edge_12" value="создание записи обращения&lt;br&gt;после приёма" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=block;endFill=1;fontSize=10;labelBackgroundColor=#ffffff;" edge="1" parent="1" source="c1_system" target="c1_case">
-          <mxGeometry relative="1" as="geometry"/>
+        <mxCell id="c1_calendar" parent="1" style="rounded=1;whiteSpace=wrap;html=1;arcSize=12;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=12;" value="Внешний календарь / расписания&lt;br&gt;&lt;span style=&#39;font-size:10px&#39;&gt;синхронизация исключений&lt;/span&gt;" vertex="1">
+          <mxGeometry height="80" width="250" x="1410" y="500" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
   </diagram>
   <diagram name="C2 Контейнеры" id="c2-containers">
-    <mxGraphModel dx="1600" dy="1000" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="2200" pageHeight="1350" math="0" shadow="0">
+    <mxGraphModel dx="3423" dy="1907" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="2200" pageHeight="1350" math="0" shadow="0">
       <root>
-        <mxCell id="0"/>
-        <mxCell id="1" parent="0"/>
-        <mxCell id="c2_title" value="C2 — Контейнерная диаграмма&lt;br&gt;Сервис электронных очередей и записи" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=24;fontStyle=1;" vertex="1" parent="1">
-          <mxGeometry x="500" y="20" width="1200" height="50" as="geometry"/>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="c2_title" parent="1" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=24;fontStyle=1;" value="C2 — Контейнерная диаграмма&lt;br&gt;Сервис электронных очередей и записи" vertex="1">
+          <mxGeometry height="50" width="1200" x="500" y="20" as="geometry" />
         </mxCell>
-        <mxCell id="c2_subtitle" value="Основной акцент: транзакционное создание записи, защита от двойного бронирования, деградация уведомлений и интеграция с SSO" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=13;fontColor=#666666;" vertex="1" parent="1">
-          <mxGeometry x="450" y="70" width="1300" height="40" as="geometry"/>
+        <mxCell id="c2_subtitle" parent="1" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=13;fontColor=#666666;" value="Основной акцент: транзакционное создание записи, защита от двойного бронирования, деградация уведомлений и интеграция с SSO" vertex="1">
+          <mxGeometry height="40" width="1300" x="450" y="70" as="geometry" />
         </mxCell>
-        <mxCell id="c2_boundary" value="Граница SoI: Сервис электронных очередей и предварительной записи" style="rounded=1;whiteSpace=wrap;html=1;fillColor=none;strokeColor=#666666;dashed=1;container=1;collapsible=0;recursiveResize=0;align=center;verticalAlign=top;fontStyle=1;fontSize=16;spacingTop=10;" vertex="1" parent="1">
-          <mxGeometry x="390" y="150" width="1300" height="960" as="geometry"/>
+        <mxCell id="c2_boundary" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=none;strokeColor=#666666;dashed=1;container=1;collapsible=0;recursiveResize=0;align=center;verticalAlign=top;fontStyle=1;fontSize=16;spacingTop=10;" value="Граница SoI: Сервис электронных очередей и предварительной записи" vertex="1">
+          <mxGeometry height="1140" width="1480" x="300" y="150" as="geometry" />
         </mxCell>
-        <mxCell id="c2_applicant" value="Заявитель" style="rounded=1;whiteSpace=wrap;html=1;arcSize=12;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=12;" vertex="1" parent="1">
-          <mxGeometry x="70" y="250" width="220" height="70" as="geometry"/>
+        <mxCell id="c2_notif_worker" parent="c2_boundary" style="rounded=1;whiteSpace=wrap;html=1;arcSize=12;fillColor=#d5e8d4;strokeColor=#82b366;fontSize=11;" value="&lt;b&gt;Notification Worker&lt;/b&gt;&lt;br&gt;&lt;span style=&#39;font-size:10px&#39;&gt;ретраи, DLQ,&lt;br&gt;шаблоны сообщений&lt;/span&gt;" vertex="1">
+          <mxGeometry height="100" width="210" x="1266" y="879" as="geometry" />
         </mxCell>
-        <mxCell id="c2_staff" value="Сотрудники&lt;br&gt;&lt;span style='font-size:10px'&gt;регистратор, администратор,&lt;br&gt;руководитель&lt;/span&gt;" style="rounded=1;whiteSpace=wrap;html=1;arcSize=12;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=12;" vertex="1" parent="1">
-          <mxGeometry x="70" y="490" width="220" height="90" as="geometry"/>
+        <mxCell id="c2_broker" parent="c2_boundary" style="shape=hexagon;perimeter=hexagonPerimeter2;whiteSpace=wrap;html=1;fixedSize=1;fillColor=#ffe6cc;strokeColor=#d79b00;fontSize=11;" value="&lt;b&gt;Message Broker&lt;/b&gt;&lt;br&gt;&lt;span style=&#39;font-size:10px&#39;&gt;AppointmentCreated,&lt;br&gt;Cancelled, ReminderDue&lt;/span&gt;" vertex="1">
+          <mxGeometry height="100" width="210" x="1120" y="620" as="geometry" />
         </mxCell>
-        <mxCell id="c2_terminal" value="Терминал / табло" style="rounded=1;whiteSpace=wrap;html=1;arcSize=12;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=12;" vertex="1" parent="1">
-          <mxGeometry x="70" y="740" width="220" height="70" as="geometry"/>
+        <mxCell id="c2_edge_21" edge="1" parent="c2_boundary" source="c2_broker" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=block;endFill=1;fontSize=10;labelBackgroundColor=#ffffff;" target="c2_notif_worker" value="consume">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="1390" y="700" />
+            </Array>
+          </mxGeometry>
         </mxCell>
-        <mxCell id="c2_sso" value="Корпоративный SSO" style="rounded=1;whiteSpace=wrap;html=1;arcSize=12;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=12;" vertex="1" parent="1">
-          <mxGeometry x="1820" y="250" width="240" height="70" as="geometry"/>
+        <mxCell id="c2_applicant" parent="1" style="rounded=1;whiteSpace=wrap;html=1;arcSize=12;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=12;" value="Заявитель" vertex="1">
+          <mxGeometry height="70" width="220" x="6" y="250" as="geometry" />
         </mxCell>
-        <mxCell id="c2_notif" value="Шлюз уведомлений" style="rounded=1;whiteSpace=wrap;html=1;arcSize=12;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=12;" vertex="1" parent="1">
-          <mxGeometry x="1820" y="430" width="240" height="70" as="geometry"/>
+        <mxCell id="c2_staff" parent="1" style="rounded=1;whiteSpace=wrap;html=1;arcSize=12;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=12;" value="Сотрудники&lt;br&gt;&lt;span style=&#39;font-size:10px&#39;&gt;регистратор, администратор,&lt;br&gt;руководитель&lt;/span&gt;" vertex="1">
+          <mxGeometry height="90" width="220" x="6" y="490" as="geometry" />
         </mxCell>
-        <mxCell id="c2_calendar" value="Внешний календарь / расписания" style="rounded=1;whiteSpace=wrap;html=1;arcSize=12;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=12;" vertex="1" parent="1">
-          <mxGeometry x="1820" y="610" width="240" height="80" as="geometry"/>
+        <mxCell id="c2_terminal" parent="1" style="rounded=1;whiteSpace=wrap;html=1;arcSize=12;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=12;" value="Терминал / табло" vertex="1">
+          <mxGeometry height="70" width="220" x="6" y="740" as="geometry" />
         </mxCell>
-        <mxCell id="c2_monitoring" value="Мониторинг / журнал событий&lt;br&gt;&lt;span style='font-size:10px'&gt;опционально&lt;/span&gt;" style="rounded=1;whiteSpace=wrap;html=1;arcSize=12;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=12;" vertex="1" parent="1">
-          <mxGeometry x="1820" y="790" width="240" height="80" as="geometry"/>
+        <mxCell id="c2_sso" parent="1" style="rounded=1;whiteSpace=wrap;html=1;arcSize=12;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=12;" value="Корпоративный SSO" vertex="1">
+          <mxGeometry height="70" width="240" x="1820" y="220" as="geometry" />
         </mxCell>
-        <mxCell id="c2_public_ui" value="&lt;b&gt;Public Web UI&lt;/b&gt;&lt;br&gt;&lt;span style='font-size:10px'&gt;ЛК заявителя&lt;br&gt;React/Vue&lt;/span&gt;" style="rounded=1;whiteSpace=wrap;html=1;arcSize=12;fillColor=#e1d5e7;strokeColor=#9673a6;fontSize=11;" vertex="1" parent="1">
-          <mxGeometry x="450" y="220" width="180" height="90" as="geometry"/>
+        <mxCell id="c2_notif" parent="1" style="rounded=1;whiteSpace=wrap;html=1;arcSize=12;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=12;" value="Шлюз уведомлений" vertex="1">
+          <mxGeometry height="70" width="240" x="1820" y="430" as="geometry" />
         </mxCell>
-        <mxCell id="c2_staff_ui" value="&lt;b&gt;Staff/Admin UI&lt;/b&gt;&lt;br&gt;&lt;span style='font-size:10px'&gt;АРМ регистратора,&lt;br&gt;панель расписаний,&lt;br&gt;отчёты&lt;/span&gt;" style="rounded=1;whiteSpace=wrap;html=1;arcSize=12;fillColor=#e1d5e7;strokeColor=#9673a6;fontSize=11;" vertex="1" parent="1">
-          <mxGeometry x="450" y="440" width="180" height="110" as="geometry"/>
+        <mxCell id="c2_calendar" parent="1" style="rounded=1;whiteSpace=wrap;html=1;arcSize=12;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=12;" value="Внешний календарь / расписания" vertex="1">
+          <mxGeometry height="80" width="240" x="1820" y="610" as="geometry" />
         </mxCell>
-        <mxCell id="c2_terminal_api" value="&lt;b&gt;Terminal API&lt;/b&gt;&lt;br&gt;&lt;span style='font-size:10px'&gt;талоны и табло&lt;/span&gt;" style="rounded=1;whiteSpace=wrap;html=1;arcSize=12;fillColor=#e1d5e7;strokeColor=#9673a6;fontSize=11;" vertex="1" parent="1">
-          <mxGeometry x="450" y="720" width="180" height="90" as="geometry"/>
+        <mxCell id="c2_monitoring" parent="1" style="rounded=1;whiteSpace=wrap;html=1;arcSize=12;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=12;" value="Мониторинг / журнал событий&lt;br&gt;&lt;span style=&#39;font-size:10px&#39;&gt;опционально&lt;/span&gt;" vertex="1">
+          <mxGeometry height="80" width="240" x="1820" y="790" as="geometry" />
         </mxCell>
-        <mxCell id="c2_gateway" value="&lt;b&gt;API Gateway / Backend API&lt;/b&gt;&lt;br&gt;&lt;span style='font-size:10px'&gt;REST API, RBAC,&lt;br&gt;валидация, rate limit&lt;/span&gt;" style="rounded=1;whiteSpace=wrap;html=1;arcSize=12;fillColor=#d5e8d4;strokeColor=#82b366;fontSize=11;" vertex="1" parent="1">
-          <mxGeometry x="730" y="430" width="230" height="120" as="geometry"/>
+        <mxCell id="c2_public_ui" parent="1" style="rounded=1;whiteSpace=wrap;html=1;arcSize=12;fillColor=#e1d5e7;strokeColor=#9673a6;fontSize=11;" value="&lt;b&gt;Public Web UI&lt;/b&gt;&lt;br&gt;&lt;span style=&#39;font-size:10px&#39;&gt;ЛК заявителя&lt;br&gt;React/Vue&lt;/span&gt;" vertex="1">
+          <mxGeometry height="90" width="180" x="323" y="220" as="geometry" />
         </mxCell>
-        <mxCell id="c2_auth" value="&lt;b&gt;Auth Adapter&lt;/b&gt;&lt;br&gt;&lt;span style='font-size:10px'&gt;SSO, JWT,&lt;br&gt;роли сотрудников&lt;/span&gt;" style="rounded=1;whiteSpace=wrap;html=1;arcSize=12;fillColor=#d5e8d4;strokeColor=#82b366;fontSize=11;" vertex="1" parent="1">
-          <mxGeometry x="1050" y="210" width="190" height="90" as="geometry"/>
+        <mxCell id="c2_staff_ui" parent="1" style="rounded=1;whiteSpace=wrap;html=1;arcSize=12;fillColor=#e1d5e7;strokeColor=#9673a6;fontSize=11;" value="&lt;b&gt;Staff/Admin UI&lt;/b&gt;&lt;br&gt;&lt;span style=&#39;font-size:10px&#39;&gt;АРМ регистратора,&lt;br&gt;панель расписаний,&lt;br&gt;отчёты&lt;/span&gt;" vertex="1">
+          <mxGeometry height="110" width="180" x="323" y="440" as="geometry" />
         </mxCell>
-        <mxCell id="c2_booking" value="&lt;b&gt;Appointment Service&lt;/b&gt;&lt;br&gt;&lt;span style='font-size:10px'&gt;создание, перенос,&lt;br&gt;отмена записи;&lt;br&gt;idempotency&lt;/span&gt;" style="rounded=1;whiteSpace=wrap;html=1;arcSize=12;fillColor=#d5e8d4;strokeColor=#82b366;fontSize=11;" vertex="1" parent="1">
-          <mxGeometry x="1030" y="370" width="230" height="120" as="geometry"/>
+        <mxCell id="c2_terminal_api" parent="1" style="rounded=1;whiteSpace=wrap;html=1;arcSize=12;fillColor=#e1d5e7;strokeColor=#9673a6;fontSize=11;" value="&lt;b&gt;Terminal API&lt;/b&gt;&lt;br&gt;&lt;span style=&#39;font-size:10px&#39;&gt;талоны и табло&lt;/span&gt;" vertex="1">
+          <mxGeometry height="90" width="180" x="323" y="720" as="geometry" />
         </mxCell>
-        <mxCell id="c2_schedule" value="&lt;b&gt;Schedule Service&lt;/b&gt;&lt;br&gt;&lt;span style='font-size:10px'&gt;услуги, окна,&lt;br&gt;графики, исключения,&lt;br&gt;расчёт слотов&lt;/span&gt;" style="rounded=1;whiteSpace=wrap;html=1;arcSize=12;fillColor=#d5e8d4;strokeColor=#82b366;fontSize=11;" vertex="1" parent="1">
-          <mxGeometry x="1030" y="550" width="230" height="130" as="geometry"/>
+        <mxCell id="c2_gateway" parent="1" style="rounded=1;whiteSpace=wrap;html=1;arcSize=12;fillColor=#d5e8d4;strokeColor=#82b366;fontSize=11;" value="&lt;b&gt;API Gateway / Backend API&lt;/b&gt;&lt;br&gt;&lt;span style=&#39;font-size:10px&#39;&gt;REST API, RBAC,&lt;br&gt;валидация, rate limit&lt;/span&gt;" vertex="1">
+          <mxGeometry height="120" width="230" x="561" y="430" as="geometry" />
         </mxCell>
-        <mxCell id="c2_queue" value="&lt;b&gt;Queue Service&lt;/b&gt;&lt;br&gt;&lt;span style='font-size:10px'&gt;талоны, вызов,&lt;br&gt;статусы приёма&lt;/span&gt;" style="rounded=1;whiteSpace=wrap;html=1;arcSize=12;fillColor=#d5e8d4;strokeColor=#82b366;fontSize=11;" vertex="1" parent="1">
-          <mxGeometry x="1030" y="740" width="230" height="110" as="geometry"/>
+        <mxCell id="c2_auth" parent="1" style="rounded=1;whiteSpace=wrap;html=1;arcSize=12;fillColor=#d5e8d4;strokeColor=#82b366;fontSize=11;" value="&lt;b&gt;Auth Adapter&lt;/b&gt;&lt;br&gt;&lt;span style=&#39;font-size:10px&#39;&gt;SSO, JWT,&lt;br&gt;роли сотрудников&lt;/span&gt;" vertex="1">
+          <mxGeometry height="90" width="190" x="1050" y="210" as="geometry" />
         </mxCell>
-        <mxCell id="c2_reporting" value="&lt;b&gt;Reporting &amp; Audit Service&lt;/b&gt;&lt;br&gt;&lt;span style='font-size:10px'&gt;отчёты, аудит действий,&lt;br&gt;метрики загрузки&lt;/span&gt;" style="rounded=1;whiteSpace=wrap;html=1;arcSize=12;fillColor=#d5e8d4;strokeColor=#82b366;fontSize=11;" vertex="1" parent="1">
-          <mxGeometry x="1030" y="910" width="230" height="110" as="geometry"/>
+        <mxCell id="c2_booking" parent="1" style="rounded=1;whiteSpace=wrap;html=1;arcSize=12;fillColor=#d5e8d4;strokeColor=#82b366;fontSize=11;" value="&lt;b&gt;Appointment Service&lt;/b&gt;&lt;br&gt;&lt;span style=&#39;font-size:10px&#39;&gt;создание, перенос,&lt;br&gt;отмена записи;&lt;br&gt;idempotency&lt;/span&gt;" vertex="1">
+          <mxGeometry height="120" width="230" x="1030" y="356" as="geometry" />
         </mxCell>
-        <mxCell id="c2_redis" value="&lt;b&gt;Redis&lt;/b&gt;&lt;br&gt;&lt;span style='font-size:10px'&gt;lock слота,&lt;br&gt;idempotency-key,&lt;br&gt;краткоживущий кэш&lt;/span&gt;" style="shape=cylinder3d;whiteSpace=wrap;html=1;boundedLbl=1;backgroundOutline=1;size=15;fillColor=#cce5ff;strokeColor=#6c8ebf;fontSize=11;" vertex="1" parent="1">
-          <mxGeometry x="1370" y="300" width="210" height="110" as="geometry"/>
+        <mxCell id="c2_schedule" parent="1" style="rounded=1;whiteSpace=wrap;html=1;arcSize=12;fillColor=#d5e8d4;strokeColor=#82b366;fontSize=11;" value="&lt;b&gt;Schedule Service&lt;/b&gt;&lt;br&gt;&lt;span style=&#39;font-size:10px&#39;&gt;услуги, окна,&lt;br&gt;графики, исключения,&lt;br&gt;расчёт слотов&lt;/span&gt;" vertex="1">
+          <mxGeometry height="130" width="230" x="1030" y="653" as="geometry" />
         </mxCell>
-        <mxCell id="c2_db" value="&lt;b&gt;PostgreSQL&lt;/b&gt;&lt;br&gt;&lt;span style='font-size:10px'&gt;appointments,&lt;br&gt;schedules, services,&lt;br&gt;audit_log&lt;/span&gt;" style="shape=cylinder3d;whiteSpace=wrap;html=1;boundedLbl=1;backgroundOutline=1;size=15;fillColor=#f8cecc;strokeColor=#b85450;fontSize=11;" vertex="1" parent="1">
-          <mxGeometry x="1370" y="520" width="210" height="130" as="geometry"/>
+        <mxCell id="c2_queue" parent="1" style="rounded=1;whiteSpace=wrap;html=1;arcSize=12;fillColor=#d5e8d4;strokeColor=#82b366;fontSize=11;" value="&lt;b&gt;Queue Service&lt;/b&gt;&lt;br&gt;&lt;span style=&#39;font-size:10px&#39;&gt;талоны, вызов,&lt;br&gt;статусы приёма&lt;/span&gt;" vertex="1">
+          <mxGeometry height="110" width="230" x="1030" y="894" as="geometry" />
         </mxCell>
-        <mxCell id="c2_broker" value="&lt;b&gt;Message Broker&lt;/b&gt;&lt;br&gt;&lt;span style='font-size:10px'&gt;AppointmentCreated,&lt;br&gt;Cancelled, ReminderDue&lt;/span&gt;" style="shape=hexagon;perimeter=hexagonPerimeter2;whiteSpace=wrap;html=1;fixedSize=1;fillColor=#ffe6cc;strokeColor=#d79b00;fontSize=11;" vertex="1" parent="1">
-          <mxGeometry x="1370" y="730" width="210" height="100" as="geometry"/>
+        <mxCell id="c2_reporting" parent="1" style="rounded=1;whiteSpace=wrap;html=1;arcSize=12;fillColor=#d5e8d4;strokeColor=#82b366;fontSize=11;" value="&lt;b&gt;Reporting &amp; Audit Service&lt;/b&gt;&lt;br&gt;&lt;span style=&#39;font-size:10px&#39;&gt;отчёты, аудит действий,&lt;br&gt;метрики загрузки&lt;/span&gt;" vertex="1">
+          <mxGeometry height="110" width="230" x="1030" y="1062" as="geometry" />
         </mxCell>
-        <mxCell id="c2_notif_worker" value="&lt;b&gt;Notification Worker&lt;/b&gt;&lt;br&gt;&lt;span style='font-size:10px'&gt;ретраи, DLQ,&lt;br&gt;шаблоны сообщений&lt;/span&gt;" style="rounded=1;whiteSpace=wrap;html=1;arcSize=12;fillColor=#d5e8d4;strokeColor=#82b366;fontSize=11;" vertex="1" parent="1">
-          <mxGeometry x="1370" y="900" width="210" height="100" as="geometry"/>
+        <mxCell id="c2_redis" parent="1" style="shape=cylinder3d;whiteSpace=wrap;html=1;boundedLbl=1;backgroundOutline=1;size=15;fillColor=#cce5ff;strokeColor=#6c8ebf;fontSize=11;" value="&lt;b&gt;Redis&lt;/b&gt;&lt;br&gt;&lt;span style=&#39;font-size:10px&#39;&gt;lock слота,&lt;br&gt;idempotency-key,&lt;br&gt;краткоживущий кэш&lt;/span&gt;" vertex="1">
+          <mxGeometry height="110" width="210" x="1370" y="282" as="geometry" />
         </mxCell>
-        <mxCell id="c2_edge_1" value="HTTPS" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=block;endFill=1;fontSize=10;labelBackgroundColor=#ffffff;" edge="1" parent="1" source="c2_applicant" target="c2_public_ui">
-          <mxGeometry relative="1" as="geometry"/>
+        <mxCell id="c2_db" parent="1" style="shape=cylinder3d;whiteSpace=wrap;html=1;boundedLbl=1;backgroundOutline=1;size=15;fillColor=#f8cecc;strokeColor=#b85450;fontSize=11;" value="&lt;b&gt;PostgreSQL&lt;/b&gt;&lt;br&gt;&lt;span style=&#39;font-size:10px&#39;&gt;appointments,&lt;br&gt;schedules, services,&lt;br&gt;audit_log&lt;/span&gt;" vertex="1">
+          <mxGeometry height="130" width="210" x="1370" y="520" as="geometry" />
         </mxCell>
-        <mxCell id="c2_edge_2" value="HTTPS" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=block;endFill=1;fontSize=10;labelBackgroundColor=#ffffff;" edge="1" parent="1" source="c2_staff" target="c2_staff_ui">
-          <mxGeometry relative="1" as="geometry"/>
+        <mxCell id="c2_edge_1" edge="1" parent="1" source="c2_applicant" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=block;endFill=1;fontSize=10;labelBackgroundColor=#ffffff;" target="c2_public_ui" value="HTTPS">
+          <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="c2_edge_3" value="LAN/HTTPS" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=block;endFill=1;fontSize=10;labelBackgroundColor=#ffffff;" edge="1" parent="1" source="c2_terminal" target="c2_terminal_api">
-          <mxGeometry relative="1" as="geometry"/>
+        <mxCell id="c2_edge_2" edge="1" parent="1" source="c2_staff" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=block;endFill=1;fontSize=10;labelBackgroundColor=#ffffff;" target="c2_staff_ui" value="HTTPS">
+          <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="c2_edge_4" value="REST" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=block;endFill=1;fontSize=10;labelBackgroundColor=#ffffff;" edge="1" parent="1" source="c2_public_ui" target="c2_gateway">
-          <mxGeometry relative="1" as="geometry"/>
+        <mxCell id="c2_edge_3" edge="1" parent="1" source="c2_terminal" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=block;endFill=1;fontSize=10;labelBackgroundColor=#ffffff;" target="c2_terminal_api" value="LAN/HTTPS">
+          <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="c2_edge_5" value="REST" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=block;endFill=1;fontSize=10;labelBackgroundColor=#ffffff;" edge="1" parent="1" source="c2_staff_ui" target="c2_gateway">
-          <mxGeometry relative="1" as="geometry"/>
+        <mxCell id="c2_edge_4" edge="1" parent="1" source="c2_public_ui" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=block;endFill=1;fontSize=10;labelBackgroundColor=#ffffff;" target="c2_gateway" value="REST">
+          <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="c2_edge_6" value="создать талон,&lt;br&gt;получить очередь" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=block;endFill=1;fontSize=10;labelBackgroundColor=#ffffff;" edge="1" parent="1" source="c2_terminal_api" target="c2_queue">
-          <mxGeometry relative="1" as="geometry"/>
+        <mxCell id="c2_edge_5" edge="1" parent="1" source="c2_staff_ui" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=block;endFill=1;fontSize=10;labelBackgroundColor=#ffffff;" target="c2_gateway" value="REST">
+          <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="c2_edge_7" value="проверка токена,&lt;br&gt;RBAC" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=block;endFill=1;fontSize=10;labelBackgroundColor=#ffffff;" edge="1" parent="1" source="c2_gateway" target="c2_auth">
-          <mxGeometry relative="1" as="geometry"/>
+        <mxCell id="c2_edge_6" edge="1" parent="1" source="c2_terminal_api" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=block;endFill=1;fontSize=10;labelBackgroundColor=#ffffff;" target="c2_queue" value="создать талон,&lt;br&gt;получить очередь">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="385" y="970" />
+            </Array>
+          </mxGeometry>
         </mxCell>
-        <mxCell id="c2_edge_8" value="OAuth2/OIDC" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=block;endFill=1;fontSize=10;labelBackgroundColor=#ffffff;" edge="1" parent="1" source="c2_auth" target="c2_sso">
-          <mxGeometry relative="1" as="geometry"/>
+        <mxCell id="c2_edge_7" edge="1" parent="1" source="c2_gateway" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=block;endFill=1;fontSize=10;labelBackgroundColor=#ffffff;" target="c2_auth" value="проверка токена,&lt;br&gt;RBAC">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="740" y="255" />
+            </Array>
+          </mxGeometry>
         </mxCell>
-        <mxCell id="c2_edge_9" value="создать / отменить /&lt;br&gt;перенести запись" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=block;endFill=1;fontSize=10;labelBackgroundColor=#ffffff;" edge="1" parent="1" source="c2_gateway" target="c2_booking">
-          <mxGeometry relative="1" as="geometry"/>
+        <mxCell id="c2_edge_8" edge="1" parent="1" source="c2_auth" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=block;endFill=1;fontSize=10;labelBackgroundColor=#ffffff;" target="c2_sso" value="OAuth2/OIDC">
+          <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="c2_edge_10" value="услуги,&lt;br&gt;доступные слоты" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=block;endFill=1;fontSize=10;labelBackgroundColor=#ffffff;" edge="1" parent="1" source="c2_gateway" target="c2_schedule">
-          <mxGeometry relative="1" as="geometry"/>
+        <mxCell id="c2_edge_9" edge="1" parent="1" source="c2_gateway" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=block;endFill=1;fontSize=10;labelBackgroundColor=#ffffff;" target="c2_booking" value="создать / отменить /&lt;br&gt;перенести запись">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="910" y="460" />
+              <mxPoint x="910" y="460" />
+            </Array>
+          </mxGeometry>
         </mxCell>
-        <mxCell id="c2_edge_11" value="статус приёма,&lt;br&gt;вызов заявителя" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=block;endFill=1;fontSize=10;labelBackgroundColor=#ffffff;" edge="1" parent="1" source="c2_gateway" target="c2_queue">
-          <mxGeometry relative="1" as="geometry"/>
+        <mxCell id="c2_edge_10" edge="1" parent="1" source="c2_gateway" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=block;endFill=1;fontSize=10;labelBackgroundColor=#ffffff;" target="c2_schedule" value="услуги,&lt;br&gt;доступные слоты">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="676" y="720" />
+            </Array>
+          </mxGeometry>
         </mxCell>
-        <mxCell id="c2_edge_12" value="отчёты,&lt;br&gt;аудит" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=block;endFill=1;fontSize=10;labelBackgroundColor=#ffffff;" edge="1" parent="1" source="c2_gateway" target="c2_reporting">
-          <mxGeometry relative="1" as="geometry"/>
+        <mxCell id="c2_edge_11" edge="1" parent="1" source="c2_gateway" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=block;endFill=1;fontSize=10;labelBackgroundColor=#ffffff;" target="c2_queue" value="статус приёма,&lt;br&gt;вызов заявителя">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="970" y="520" />
+              <mxPoint x="970" y="949" />
+            </Array>
+          </mxGeometry>
         </mxCell>
-        <mxCell id="c2_edge_13" value="проверка доступности&lt;br&gt;и длительности услуги" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=block;endFill=1;fontSize=10;labelBackgroundColor=#ffffff;" edge="1" parent="1" source="c2_booking" target="c2_schedule">
-          <mxGeometry relative="1" as="geometry"/>
+        <mxCell id="c2_edge_12" edge="1" parent="1" source="c2_gateway" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=block;endFill=1;fontSize=10;labelBackgroundColor=#ffffff;" target="c2_reporting" value="отчёты,&lt;br&gt;аудит">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="750" y="580" />
+              <mxPoint x="890" y="580" />
+              <mxPoint x="890" y="1075" />
+            </Array>
+          </mxGeometry>
         </mxCell>
-        <mxCell id="c2_edge_14" value="lock слота,&lt;br&gt;idempotency" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=block;endFill=1;fontSize=10;labelBackgroundColor=#ffffff;" edge="1" parent="1" source="c2_booking" target="c2_redis">
-          <mxGeometry relative="1" as="geometry"/>
+        <mxCell id="c2_edge_13" edge="1" parent="1" source="c2_booking" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=block;endFill=1;fontSize=10;labelBackgroundColor=#ffffff;" target="c2_schedule" value="проверка доступности&lt;br&gt;и длительности услуги">
+          <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="c2_edge_15" value="транзакция записи,&lt;br&gt;уникальный слот" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=block;endFill=1;fontSize=10;labelBackgroundColor=#ffffff;" edge="1" parent="1" source="c2_booking" target="c2_db">
-          <mxGeometry relative="1" as="geometry"/>
+        <mxCell id="c2_edge_14" edge="1" parent="1" source="c2_booking" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=block;endFill=1;fontSize=10;labelBackgroundColor=#ffffff;" target="c2_redis" value="lock слота,&lt;br&gt;idempotency">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="1315" y="400" />
+              <mxPoint x="1315" y="337" />
+            </Array>
+          </mxGeometry>
         </mxCell>
-        <mxCell id="c2_edge_16" value="графики,&lt;br&gt;исключения" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=block;endFill=1;fontSize=10;labelBackgroundColor=#ffffff;" edge="1" parent="1" source="c2_schedule" target="c2_db">
-          <mxGeometry relative="1" as="geometry"/>
+        <mxCell id="c2_edge_15" edge="1" parent="1" source="c2_booking" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=block;endFill=1;fontSize=10;labelBackgroundColor=#ffffff;" target="c2_db" value="транзакция записи,&lt;br&gt;уникальный слот">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="1475" y="420" />
+            </Array>
+          </mxGeometry>
         </mxCell>
-        <mxCell id="c2_edge_17" value="талоны,&lt;br&gt;статусы" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=block;endFill=1;fontSize=10;labelBackgroundColor=#ffffff;" edge="1" parent="1" source="c2_queue" target="c2_db">
-          <mxGeometry relative="1" as="geometry"/>
+        <mxCell id="c2_edge_16" edge="1" parent="1" source="c2_schedule" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=block;endFill=1;fontSize=10;labelBackgroundColor=#ffffff;" target="c2_db" value="графики,&lt;br&gt;исключения">
+          <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="c2_edge_18" value="выборки,&lt;br&gt;audit trail" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=block;endFill=1;fontSize=10;labelBackgroundColor=#ffffff;" edge="1" parent="1" source="c2_reporting" target="c2_db">
-          <mxGeometry relative="1" as="geometry"/>
+        <mxCell id="c2_edge_17" edge="1" parent="1" source="c2_queue" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=block;endFill=1;fontSize=10;labelBackgroundColor=#ffffff;" target="c2_db" value="талоны,&lt;br&gt;статусы">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="1680" y="980" />
+              <mxPoint x="1680" y="585" />
+            </Array>
+          </mxGeometry>
         </mxCell>
-        <mxCell id="c2_edge_19" value="события записи" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=block;endFill=1;fontSize=10;labelBackgroundColor=#ffffff;" edge="1" parent="1" source="c2_booking" target="c2_broker">
-          <mxGeometry relative="1" as="geometry"/>
+        <mxCell id="c2_edge_18" edge="1" parent="1" source="c2_reporting" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=block;endFill=1;fontSize=10;labelBackgroundColor=#ffffff;" target="c2_db" value="выборки,&lt;br&gt;audit trail">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="1290" y="1117" />
+              <mxPoint x="1290" y="585" />
+            </Array>
+          </mxGeometry>
         </mxCell>
-        <mxCell id="c2_edge_20" value="события очереди" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=block;endFill=1;fontSize=10;labelBackgroundColor=#ffffff;" edge="1" parent="1" source="c2_queue" target="c2_broker">
-          <mxGeometry relative="1" as="geometry"/>
+        <mxCell id="c2_edge_19" edge="1" parent="1" source="c2_booking" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=block;endFill=1;fontSize=10;labelBackgroundColor=#ffffff;" target="c2_broker" value="события записи">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="1740" y="450" />
+              <mxPoint x="1740" y="820" />
+            </Array>
+          </mxGeometry>
         </mxCell>
-        <mxCell id="c2_edge_21" value="consume" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=block;endFill=1;fontSize=10;labelBackgroundColor=#ffffff;" edge="1" parent="1" source="c2_broker" target="c2_notif_worker">
-          <mxGeometry relative="1" as="geometry"/>
+        <mxCell id="c2_edge_20" edge="1" parent="1" source="c2_queue" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=block;endFill=1;fontSize=10;labelBackgroundColor=#ffffff;" target="c2_broker" value="события очереди">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="1340" y="940" />
+              <mxPoint x="1340" y="804" />
+            </Array>
+          </mxGeometry>
         </mxCell>
-        <mxCell id="c2_edge_22" value="SMS/e-mail/push" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=block;endFill=1;fontSize=10;labelBackgroundColor=#ffffff;" edge="1" parent="1" source="c2_notif_worker" target="c2_notif">
-          <mxGeometry relative="1" as="geometry"/>
+        <mxCell id="c2_edge_22" edge="1" parent="1" source="c2_notif_worker" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=block;endFill=1;fontSize=10;labelBackgroundColor=#ffffff;" target="c2_notif" value="SMS/e-mail/push">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="2120" y="1100" />
+              <mxPoint x="2120" y="465" />
+            </Array>
+          </mxGeometry>
         </mxCell>
-        <mxCell id="c2_edge_23" value="синхронизация&lt;br&gt;исключений" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=block;endFill=1;fontSize=10;labelBackgroundColor=#ffffff;" edge="1" parent="1" source="c2_schedule" target="c2_calendar">
-          <mxGeometry relative="1" as="geometry"/>
+        <mxCell id="c2_edge_23" edge="1" parent="1" source="c2_schedule" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=block;endFill=1;fontSize=10;labelBackgroundColor=#ffffff;" target="c2_calendar" value="синхронизация&lt;br&gt;исключений">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="1610" y="750" />
+              <mxPoint x="1610" y="670" />
+            </Array>
+          </mxGeometry>
         </mxCell>
-        <mxCell id="c2_edge_24" value="метрики и события" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=block;endFill=1;fontSize=10;labelBackgroundColor=#ffffff;" edge="1" parent="1" source="c2_reporting" target="c2_monitoring">
-          <mxGeometry relative="1" as="geometry"/>
+        <mxCell id="c2_edge_24" edge="1" parent="1" source="c2_reporting" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=block;endFill=1;fontSize=10;labelBackgroundColor=#ffffff;" target="c2_monitoring" value="метрики и события">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="1145" y="1230" />
+              <mxPoint x="1940" y="1230" />
+            </Array>
+          </mxGeometry>
         </mxCell>
       </root>
     </mxGraphModel>
