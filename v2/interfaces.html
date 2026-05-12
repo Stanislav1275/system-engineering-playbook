@@ -207,6 +207,7 @@
 <tr><td>Назначение</td><td>Создание записи на приём</td></tr>
 <tr><td>Метод и путь</td><td><code>POST /api/v1/appointments</code></td></tr>
 <tr><td>Заголовки</td><td><code>Idempotency-Key</code>, <code>Content-Type: application/json</code></td></tr>
+<tr><td>Авторизация</td><td>Не требуется для заявителей; токен сессии передаётся через cookie или query-параметр при наличии личного кабинета</td></tr>
 <tr><td>Тело запроса</td><td><code>applicant</code>, <code>serviceId</code>, <code>departmentId</code>, <code>windowId</code>, <code>startAt</code>, <code>notificationChannel</code></td></tr>
 <tr><td>Ответ 201</td><td><code>appointmentId</code>, <code>status</code>, <code>serviceId</code>, <code>departmentId</code>, <code>startAt</code>, <code>endAt</code></td></tr>
 <tr><td>Ошибки</td><td><code>400 INVALID_REQUEST</code>, <code>409 SLOT_ALREADY_BOOKED</code>, <code>422 SLOT_NOT_AVAILABLE</code>, <code>503 SERVICE_UNAVAILABLE</code></td></tr>
@@ -215,10 +216,10 @@
 <tr><td>Версия</td><td><code>/api/v1</code></td></tr>
 </tbody></table>
 </div>
-<h2 id="54-patch-appointmentsappointmentidcancel"><a class="header" href="#54-patch-appointmentsappointmentidcancel">5.4. PATCH /appointments/{appointmentId}/cancel</a></h2>
+<h2 id="54-post-appointmentsappointmentidcancellations"><a class="header" href="#54-post-appointmentsappointmentidcancellations">5.4. POST /appointments/{appointmentId}/cancellations</a></h2>
 <div class="table-wrapper"><table><thead><tr><th>Параметр</th><th>Описание</th></tr></thead><tbody>
 <tr><td>Назначение</td><td>Отмена записи заявителем</td></tr>
-<tr><td>Метод и путь</td><td><code>PATCH /api/v1/appointments/{appointmentId}/cancel</code></td></tr>
+<tr><td>Метод и путь</td><td><code>POST /api/v1/appointments/{appointmentId}/cancellations</code></td></tr>
 <tr><td>Тело запроса</td><td><code>reason</code>, <code>requestedBy</code></td></tr>
 <tr><td>Ответ 200</td><td><code>appointmentId</code>, <code>status: cancelled</code>, <code>cancelledAt</code></td></tr>
 <tr><td>Ошибки</td><td><code>404 APPOINTMENT_NOT_FOUND</code>, <code>409 CANCELLATION_NOT_ALLOWED</code>, <code>403 FORBIDDEN</code></td></tr>
