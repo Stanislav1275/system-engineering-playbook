@@ -1,11 +1,6 @@
 # Summary
 
-- [ПОЗВОНИТЬ ЛУКАШЕНКО](./lukashenko.md)
-- [Контекстная диаграмма](./drawio.md)
-- [Интерфейсы](./swagger.md)
-- [Документация](./equeue.md)
 
-# v2: equeue
 
 - [О работе](./v2/overview.md)
 - [Контекст и границы](./v2/context.md)
