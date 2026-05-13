@@ -36,6 +36,7 @@
 | Назначение | Создание записи на приём |
 | Метод и путь | `POST /api/v1/appointments` |
 | Заголовки | `Idempotency-Key`, `Content-Type: application/json` |
+| Авторизация | Не требуется для заявителей; токен сессии передаётся через cookie или query-параметр при наличии личного кабинета |
 | Тело запроса | `applicant`, `serviceId`, `departmentId`, `windowId`, `startAt`, `notificationChannel` |
 | Ответ 201 | `appointmentId`, `status`, `serviceId`, `departmentId`, `startAt`, `endAt` |
 | Ошибки | `400 INVALID_REQUEST`, `409 SLOT_ALREADY_BOOKED`, `422 SLOT_NOT_AVAILABLE`, `503 SERVICE_UNAVAILABLE` |
@@ -43,12 +44,12 @@
 | Идемпотентность | Обязательна |
 | Версия | `/api/v1` |
 
-## 5.4. PATCH /appointments/{appointmentId}/cancel
+## 5.4. POST /appointments/{appointmentId}/cancellations
 
 | Параметр | Описание |
 |---|---|
 | Назначение | Отмена записи заявителем |
-| Метод и путь | `PATCH /api/v1/appointments/{appointmentId}/cancel` |
+| Метод и путь | `POST /api/v1/appointments/{appointmentId}/cancellations` |
 | Тело запроса | `reason`, `requestedBy` |
 | Ответ 200 | `appointmentId`, `status: cancelled`, `cancelledAt` |
 | Ошибки | `404 APPOINTMENT_NOT_FOUND`, `409 CANCELLATION_NOT_ALLOWED`, `403 FORBIDDEN` |
