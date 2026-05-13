@@ -4,3 +4,4 @@
 - [Пример использования Drawio](./drawio.md)
 - [Пример использования Swagger](./swagger.md)
 - [Документация](./equeue_architecture_spec.md)
+- [Документация](./equeue_architecture_spec.md)
