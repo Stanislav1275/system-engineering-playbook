@@ -9,5 +9,5 @@
 ### Добавление диаграммы в документацию
 
 Для вставки диаграммы используйте синтаксис из примера ниже, заметете, что необходимо указать ссылку на файл в репозитории.
+
 @drawio{https://disk.yandex.ru/d/qAAG4p_pHDuzkg}
-![Контекстная диаграмма eQueue](https://github.com/Stanislav1275/system-engineering-playbook/raw/main/src/diagrams/equeue.drawio)
