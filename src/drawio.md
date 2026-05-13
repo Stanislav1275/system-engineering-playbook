@@ -9,4 +9,4 @@
 ### Добавление диаграммы в документацию
 
 Для вставки диаграммы используйте синтаксис из примера ниже, заметете, что необходимо указать ссылку на файл в репозитории.
-@drawio[https://github.com/Stanislav1275/system-engineering-playbook/tree/main/src/diagrams/equeue.drawio]
+@drawio{https://github.com/Stanislav1275/system-engineering-playbook/tree/main/src/diagrams/equeue.drawio}
