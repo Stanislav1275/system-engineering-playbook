@@ -1,3 +1,3 @@
 # Архитектура и потоки
 
-@drawio{https://github.com/bndroll/mdb/blob/master/src/diagrams/equeue_c4_architecture.drawio}
+@drawio{https://github.com/Stanislav1275/mdb/blob/master/src/diagrams/equeue_architecture_spec.md}
