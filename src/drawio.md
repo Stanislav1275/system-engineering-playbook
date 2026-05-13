@@ -10,4 +10,4 @@
 
 Для вставки диаграммы используйте синтаксис из примера ниже, заметете, что необходимо указать ссылку на файл в репозитории.
 
-@drawio{https://github.com/Stanislav1275/mdb/blob/master/src/diagrams/equeue_architecture_spec.drawio}
+@drawio{https://github.com/Stanislav1275/system-engineering-playbook/blob/main/src/diagrams/equeue_c4_architecture.drawio}
