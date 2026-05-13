@@ -18,7 +18,7 @@
 - внешний календарь предоставляет или принимает данные расписания;
 - система мониторинга получает метрики и логи.
 
-@drawio{https://github.com/Stanislav1275/system-engineering-playbook/blob/main/src/diagrams/equeue.drawio}
+@drawio{https://github.com/Stanislav1275/system-engineering-playbook/blob/main/src/diagrams/equeuee.drawio}
 
 ## 4.3. C4 Container
 
