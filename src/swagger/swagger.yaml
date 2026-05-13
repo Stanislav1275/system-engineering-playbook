@@ -1,31 +1,796 @@
-openapi: 3.0.0
+openapi: 3.0.3
 info:
-  title: API Documentation
+  title: Сервис электронных очередей и предварительной записи
   version: 1.0.0
-  description: API documentation for the application
+  description: >
+    REST API для записи заявителей на услуги, управления слотами, очередью,
+    расписаниями, уведомлениями и статусами приёма.
 servers:
-  - url: /api
-    description: API prefix
+  - url: https://api.equeue.example/v1
+    description: Production API
+  - url: https://test-api.equeue.example/v1
+    description: Test API
+
+tags:
+  - name: Public
+    description: Публичные операции заявителя
+  - name: Appointments
+    description: Записи на приём
+  - name: Registrar
+    description: Рабочее место регистратора
+  - name: Admin
+    description: Управление расписаниями и услугами
+  - name: Queue
+    description: Электронная очередь, терминалы и табло
+  - name: Reports
+    description: Отчёты руководителя
+
+security:
+  - bearerAuth: []
 
 paths:
-  /ping:
+  /services:
     get:
-      tags:
-        - Health Check
+      tags: [Public]
+      summary: Получить список услуг
+      security: []
+      parameters:
+        - name: departmentId
+          in: query
+          required: false
+          schema:
+            type: string
+            format: uuid
       responses:
         "200":
+          description: Список услуг
           content:
             application/json:
               schema:
-                $ref: "#/components/schemas/Ok"
+                type: object
+                properties:
+                  items:
+                    type: array
+                    items:
+                      $ref: "#/components/schemas/Service"
+
+  /departments:
+    get:
+      tags: [Public]
+      summary: Получить список подразделений
+      security: []
+      responses:
+        "200":
+          description: Список подразделений
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  items:
+                    type: array
+                    items:
+                      $ref: "#/components/schemas/Department"
+
+  /slots:
+    get:
+      tags: [Public]
+      summary: Получить доступные слоты для услуги и подразделения
+      security: []
+      parameters:
+        - name: serviceId
+          in: query
+          required: true
+          schema:
+            type: string
+            format: uuid
+        - name: departmentId
+          in: query
+          required: true
+          schema:
+            type: string
+            format: uuid
+        - name: date
+          in: query
+          required: true
+          description: Дата в формате YYYY-MM-DD
+          schema:
+            type: string
+            format: date
+      responses:
+        "200":
+          description: Доступные слоты
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  items:
+                    type: array
+                    items:
+                      $ref: "#/components/schemas/Slot"
+        "400":
+          $ref: "#/components/responses/BadRequest"
+
+  /appointments:
+    post:
+      tags: [Appointments]
+      summary: Создать запись на приём
+      security: []
+      parameters:
+        - name: Idempotency-Key
+          in: header
+          required: true
+          description: Ключ идемпотентности для защиты от повторной отправки формы
+          schema:
+            type: string
+            minLength: 16
+            maxLength: 128
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/CreateAppointmentRequest"
+      responses:
+        "201":
+          description: Запись создана
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Appointment"
+        "409":
+          description: Слот уже занят или временно заблокирован
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Error"
+
+    get:
+      tags: [Appointments]
+      summary: Получить записи заявителя
+      parameters:
+        - name: applicantPhone
+          in: query
+          required: false
+          schema:
+            type: string
+        - name: status
+          in: query
+          required: false
+          schema:
+            $ref: "#/components/schemas/AppointmentStatus"
+      responses:
+        "200":
+          description: Список записей
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  items:
+                    type: array
+                    items:
+                      $ref: "#/components/schemas/Appointment"
+
+  /appointments/{appointmentId}:
+    get:
+      tags: [Appointments]
+      summary: Получить запись по идентификатору
+      security: []
+      parameters:
+        - $ref: "#/components/parameters/AppointmentId"
+      responses:
+        "200":
+          description: Запись найдена
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Appointment"
+        "404":
+          $ref: "#/components/responses/NotFound"
+
+  /appointments/{appointmentId}/cancel:
+    patch:
+      tags: [Appointments]
+      summary: Отменить запись
+      security: []
+      parameters:
+        - $ref: "#/components/parameters/AppointmentId"
+      requestBody:
+        required: false
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                reason:
+                  type: string
+                  maxLength: 500
+      responses:
+        "200":
+          description: Запись отменена, слот освобождён
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Appointment"
+        "404":
+          $ref: "#/components/responses/NotFound"
+        "409":
+          description: Запись уже завершена или не может быть отменена
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Error"
+
+  /appointments/{appointmentId}/reschedule:
+    patch:
+      tags: [Appointments]
+      summary: Перенести запись на другой слот
+      security: []
+      parameters:
+        - $ref: "#/components/parameters/AppointmentId"
+        - name: Idempotency-Key
+          in: header
+          required: true
+          schema:
+            type: string
+            minLength: 16
+            maxLength: 128
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required: [newSlotId]
+              properties:
+                newSlotId:
+                  type: string
+      responses:
+        "200":
+          description: Запись перенесена
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Appointment"
+        "409":
+          description: Новый слот уже занят
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Error"
+
+  /registrar/appointments:
+    get:
+      tags: [Registrar]
+      summary: Получить список записей для регистратора
+      parameters:
+        - name: departmentId
+          in: query
+          required: true
+          schema:
+            type: string
+            format: uuid
+        - name: date
+          in: query
+          required: true
+          schema:
+            type: string
+            format: date
+        - name: status
+          in: query
+          required: false
+          schema:
+            $ref: "#/components/schemas/AppointmentStatus"
+      responses:
+        "200":
+          description: Записи на выбранную дату
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  items:
+                    type: array
+                    items:
+                      $ref: "#/components/schemas/Appointment"
+
+  /registrar/appointments/{appointmentId}/status:
+    patch:
+      tags: [Registrar]
+      summary: Изменить статус обслуживания заявителя
+      parameters:
+        - $ref: "#/components/parameters/AppointmentId"
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required: [status]
+              properties:
+                status:
+                  $ref: "#/components/schemas/AppointmentStatus"
+                windowNumber:
+                  type: string
+                comment:
+                  type: string
+      responses:
+        "200":
+          description: Статус изменён
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Appointment"
+        "403":
+          $ref: "#/components/responses/Forbidden"
+
+  /admin/schedules:
+    post:
+      tags: [Admin]
+      summary: Создать или обновить расписание окна обслуживания
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/Schedule"
+      responses:
+        "200":
+          description: Расписание сохранено
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Schedule"
+        "403":
+          $ref: "#/components/responses/Forbidden"
+
+    get:
+      tags: [Admin]
+      summary: Получить расписания подразделения
+      parameters:
+        - name: departmentId
+          in: query
+          required: true
+          schema:
+            type: string
+            format: uuid
+      responses:
+        "200":
+          description: Список расписаний
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  items:
+                    type: array
+                    items:
+                      $ref: "#/components/schemas/Schedule"
+
+  /admin/schedule-exceptions:
+    post:
+      tags: [Admin]
+      summary: Добавить исключение в расписание
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/ScheduleException"
+      responses:
+        "201":
+          description: Исключение создано
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ScheduleException"
+
+  /queue/tickets:
+    post:
+      tags: [Queue]
+      summary: Создать талон электронной очереди через терминал
+      security: []
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required: [serviceId, departmentId]
+              properties:
+                serviceId:
+                  type: string
+                  format: uuid
+                departmentId:
+                  type: string
+                  format: uuid
+                appointmentId:
+                  type: string
+                  format: uuid
+                  nullable: true
+      responses:
+        "201":
+          description: Талон создан
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/QueueTicket"
+
+  /queue/board/{departmentId}:
+    get:
+      tags: [Queue]
+      summary: Получить состояние табло очереди
+      security: []
+      parameters:
+        - name: departmentId
+          in: path
+          required: true
+          schema:
+            type: string
+            format: uuid
+      responses:
+        "200":
+          description: Текущее состояние очереди
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  current:
+                    type: array
+                    items:
+                      $ref: "#/components/schemas/QueueTicket"
+
+  /reports/load:
+    get:
+      tags: [Reports]
+      summary: Получить отчёт о загрузке окон и неявках
+      parameters:
+        - name: departmentId
+          in: query
+          required: true
+          schema:
+            type: string
+            format: uuid
+        - name: dateFrom
+          in: query
+          required: true
+          schema:
+            type: string
+            format: date
+        - name: dateTo
+          in: query
+          required: true
+          schema:
+            type: string
+            format: date
+      responses:
+        "200":
+          description: Отчёт по загрузке
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  departmentId:
+                    type: string
+                    format: uuid
+                  totalAppointments:
+                    type: integer
+                  completed:
+                    type: integer
+                  cancelled:
+                    type: integer
+                  noShow:
+                    type: integer
+                  averageWaitingMinutes:
+                    type: number
+                    format: float
 
 components:
+  securitySchemes:
+    bearerAuth:
+      type: http
+      scheme: bearer
+      bearerFormat: JWT
+
+  parameters:
+    AppointmentId:
+      name: appointmentId
+      in: path
+      required: true
+      schema:
+        type: string
+        format: uuid
+
+  responses:
+    BadRequest:
+      description: Некорректный запрос
+      content:
+        application/json:
+          schema:
+            $ref: "#/components/schemas/Error"
+    Forbidden:
+      description: Недостаточно прав
+      content:
+        application/json:
+          schema:
+            $ref: "#/components/schemas/Error"
+    NotFound:
+      description: Объект не найден
+      content:
+        application/json:
+          schema:
+            $ref: "#/components/schemas/Error"
+
   schemas:
-    Ok:
+    Department:
       type: object
+      required: [id, name, address]
       properties:
-        ok:
+        id:
+          type: string
+          format: uuid
+        name:
+          type: string
+        address:
+          type: string
+        timezone:
+          type: string
+          example: Europe/Moscow
+
+    Service:
+      type: object
+      required: [id, departmentId, name, durationMinutes, active]
+      properties:
+        id:
+          type: string
+          format: uuid
+        departmentId:
+          type: string
+          format: uuid
+        name:
+          type: string
+        durationMinutes:
+          type: integer
+          minimum: 5
+          example: 30
+        active:
           type: boolean
-          example: true
-      required:
-        - ok
+
+    Slot:
+      type: object
+      required: [slotId, departmentId, serviceId, windowId, startAt, endAt, status]
+      properties:
+        slotId:
+          type: string
+          description: Логический идентификатор слота, рассчитанный на основании расписания
+        departmentId:
+          type: string
+          format: uuid
+        serviceId:
+          type: string
+          format: uuid
+        windowId:
+          type: string
+          format: uuid
+        startAt:
+          type: string
+          format: date-time
+        endAt:
+          type: string
+          format: date-time
+        status:
+          type: string
+          enum: [available, locked, booked, unavailable]
+
+    CreateAppointmentRequest:
+      type: object
+      required: [serviceId, departmentId, slotId, applicant]
+      properties:
+        serviceId:
+          type: string
+          format: uuid
+        departmentId:
+          type: string
+          format: uuid
+        slotId:
+          type: string
+        applicant:
+          $ref: "#/components/schemas/ApplicantInput"
+        notificationChannel:
+          type: string
+          enum: [sms, email, push]
+          default: sms
+
+    ApplicantInput:
+      type: object
+      required: [fullName, phone]
+      properties:
+        fullName:
+          type: string
+          maxLength: 255
+        phone:
+          type: string
+          maxLength: 32
+        email:
+          type: string
+          format: email
+        documentNumberMasked:
+          type: string
+          description: Маскированный номер документа, если требуется для идентификации
+
+    Appointment:
+      type: object
+      required: [id, serviceId, departmentId, slotId, applicantId, status, startAt, endAt, createdAt]
+      properties:
+        id:
+          type: string
+          format: uuid
+        serviceId:
+          type: string
+          format: uuid
+        departmentId:
+          type: string
+          format: uuid
+        slotId:
+          type: string
+        applicantId:
+          type: string
+          format: uuid
+        ticketNumber:
+          type: string
+          nullable: true
+        status:
+          $ref: "#/components/schemas/AppointmentStatus"
+        startAt:
+          type: string
+          format: date-time
+        endAt:
+          type: string
+          format: date-time
+        createdAt:
+          type: string
+          format: date-time
+        updatedAt:
+          type: string
+          format: date-time
+
+    AppointmentStatus:
+      type: string
+      enum:
+        - pending_confirmation
+        - confirmed
+        - cancelled
+        - waiting
+        - called
+        - in_service
+        - completed
+        - no_show
+        - expired
+
+    Schedule:
+      type: object
+      required: [id, departmentId, windowId, serviceIds, validFrom, validTo, weekdays, workStart, workEnd, slotStepMinutes]
+      properties:
+        id:
+          type: string
+          format: uuid
+        departmentId:
+          type: string
+          format: uuid
+        windowId:
+          type: string
+          format: uuid
+        serviceIds:
+          type: array
+          items:
+            type: string
+            format: uuid
+        validFrom:
+          type: string
+          format: date
+        validTo:
+          type: string
+          format: date
+        weekdays:
+          type: array
+          description: Дни недели 1-7
+          items:
+            type: integer
+            minimum: 1
+            maximum: 7
+        workStart:
+          type: string
+          example: "09:00"
+        workEnd:
+          type: string
+          example: "18:00"
+        breaks:
+          type: array
+          items:
+            type: object
+            properties:
+              start:
+                type: string
+                example: "13:00"
+              end:
+                type: string
+                example: "14:00"
+        slotStepMinutes:
+          type: integer
+          example: 30
+
+    ScheduleException:
+      type: object
+      required: [id, departmentId, windowId, date, type]
+      properties:
+        id:
+          type: string
+          format: uuid
+        departmentId:
+          type: string
+          format: uuid
+        windowId:
+          type: string
+          format: uuid
+        date:
+          type: string
+          format: date
+        type:
+          type: string
+          enum: [day_off, extra_work_day, blocked_interval]
+        start:
+          type: string
+          nullable: true
+          example: "10:00"
+        end:
+          type: string
+          nullable: true
+          example: "12:00"
+        reason:
+          type: string
+
+    QueueTicket:
+      type: object
+      required: [id, departmentId, serviceId, number, status, createdAt]
+      properties:
+        id:
+          type: string
+          format: uuid
+        departmentId:
+          type: string
+          format: uuid
+        serviceId:
+          type: string
+          format: uuid
+        appointmentId:
+          type: string
+          format: uuid
+          nullable: true
+        number:
+          type: string
+          example: A-023
+        status:
+          type: string
+          enum: [waiting, called, in_service, completed, cancelled]
+        windowNumber:
+          type: string
+          nullable: true
+        createdAt:
+          type: string
+          format: date-time
+
+    Error:
+      type: object
+      required: [code, message]
+      properties:
+        code:
+          type: string
+          example: SLOT_ALREADY_BOOKED
+        message:
+          type: string
+        traceId:
+          type: string
