@@ -6,7 +6,7 @@ _tools/mdbook-drawio/Cargo.lock
 .DS_Store
 .AppleDouble
 .LSOverride
-
+#src/reference/
 .idea/
 .vscode/
 *.swp
